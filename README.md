@@ -30,7 +30,7 @@ git remote add dokku dokku@dokku7.code4sa.org:ckan-solr
 ### Configure it to use the volume
 
 ```
-dokku docker-options:add ckan-solr run --volume ckan-solr:/opt/solr/server/solr/ckan
+dokku docker-options:add ckan-solr run,deploy --volume ckan-solr:/opt/solr/server/solr/ckan
 ```
 
 ### Deploy the app
