@@ -155,6 +155,7 @@ schema. In this case the version should be set to the next CKAN version number.
     <dynamicField name="*_date" type="date" indexed="true" stored="true" multiValued="false"/>
 
     <dynamicField name="extras_*" type="text" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="extras_s_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="res_extras_*" type="text" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="vocab_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="ckanext-extractor_*" type="text" indexed="true" stored="false"/>
@@ -164,6 +165,8 @@ schema. In this case the version should be set to the next CKAN version number.
 <uniqueKey>index_id</uniqueKey>
 <defaultSearchField>text</defaultSearchField>
 <solrQueryParser defaultOperator="AND"/>
+
+<copyField source="extras_*" dest="extras_s_*"/>
 
 <copyField source="url" dest="urls"/>
 <copyField source="ckan_url" dest="urls"/>
