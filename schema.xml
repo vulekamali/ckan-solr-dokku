@@ -161,7 +161,7 @@ schema. In this case the version should be set to the next CKAN version number.
     <dynamicField name="extras_s_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="res_extras_*" type="text" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="vocab_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="ckanext-extractor_*" type="text" indexed="true" stored="false"/>
+    <dynamicField name="ckanext-extractor_*" type="text" indexed="true" stored="true" storeOffsetsWithPositions="true"/>
     <dynamicField name="*" type="string" indexed="true"  stored="false"/>
 </fields>
 
