@@ -348,7 +348,6 @@
             <int name="mlt.mintf">3</int>
             <int name="mlt.mindf">1</int>
             <int name="mlt.minwl">3</int>
-            <str name="fq">-organization:national-treasury</str>
         </lst>
     </requestHandler>
 </config>
