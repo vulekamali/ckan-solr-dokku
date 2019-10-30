@@ -31,6 +31,9 @@ git remote add dokku dokku@dokku7.code4sa.org:ckan-solr
 
 ```
 dokku docker-options:add ckan-solr run,deploy --volume ckan-solr:/opt/solr/server/solr/ckan
+dokku docker-options:add ckan-solr run,deploy --volume solr-budgetportal:/opt/solr/server/solr/budgetportal/data
+dokku docker-options:add ckan-solr run,deploy --volume solr-budgetportal-staging:/opt/solr/server/solr/budgetportal-staging/data
+dokku docker-options:add ckan-solr run,deploy --volume solr-budgetportal-irmdemo:/opt/solr/server/solr/budgetportal-irmdemo/data
 ```
 
 ### Deploy the app
