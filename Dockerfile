@@ -27,29 +27,6 @@ USER $SOLR_USER:$SOLR_USER
 
 
 ###########################################
-## Budget Portal IRM Demo core
-
-# Create Directories
-RUN mkdir -p /opt/solr/server/solr/budgetportal-irmdemo/conf
-RUN mkdir -p /opt/solr/server/solr/budgetportal-irmdemo/data
-
-# Adding Files
-ADD ./cores/budgetportal-irmdemo/conf /opt/solr/server/solr/budgetportal-irmdemo/conf/
-RUN cp -r /opt/solr/example/files/conf/lang /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
-    cp -r /opt/solr/example/files/conf/stopwords.txt /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
-    cp -r /opt/solr/example/files/conf/synonyms.txt /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
-    cp -r /opt/solr/example/files/conf/protwords.txt /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
-    cp -r /opt/solr/example/files/conf/currency.xml /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
-    cp -r /opt/solr/example/files/conf/elevate.xml /opt/solr/server/solr/budgetportal-irmdemo/conf/
-
-# Create Core.properties
-RUN echo name=budgetportal-irmdemo > /opt/solr/server/solr/budgetportal-irmdemo/core.properties
-
-USER root
-RUN chown -R $SOLR_USER:$SOLR_USER /opt/solr/server/solr/budgetportal-irmdemo
-USER $SOLR_USER:$SOLR_USER
-
-###########################################
 ## Budget Portal Prod core
 
 # Create Directories
@@ -73,6 +50,29 @@ RUN chown -R $SOLR_USER:$SOLR_USER /opt/solr/server/solr/budgetportal
 USER $SOLR_USER:$SOLR_USER
 
 ###########################################
+## Budget Portal IRM Demo core
+
+# Create Directories
+RUN mkdir -p /opt/solr/server/solr/budgetportal-irmdemo/conf
+RUN mkdir -p /opt/solr/server/solr/budgetportal-irmdemo/data
+
+# Adding Files
+ADD ./cores/budgetportal/conf /opt/solr/server/solr/budgetportal-irmdemo/conf/
+RUN cp -r /opt/solr/example/files/conf/lang /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
+    cp -r /opt/solr/example/files/conf/stopwords.txt /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
+    cp -r /opt/solr/example/files/conf/synonyms.txt /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
+    cp -r /opt/solr/example/files/conf/protwords.txt /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
+    cp -r /opt/solr/example/files/conf/currency.xml /opt/solr/server/solr/budgetportal-irmdemo/conf/ && \
+    cp -r /opt/solr/example/files/conf/elevate.xml /opt/solr/server/solr/budgetportal-irmdemo/conf/
+
+# Create Core.properties
+RUN echo name=budgetportal-irmdemo > /opt/solr/server/solr/budgetportal-irmdemo/core.properties
+
+USER root
+RUN chown -R $SOLR_USER:$SOLR_USER /opt/solr/server/solr/budgetportal-irmdemo
+USER $SOLR_USER:$SOLR_USER
+
+###########################################
 ## Budget Portal Staging core
 
 # Create Directories
@@ -80,7 +80,7 @@ RUN mkdir -p /opt/solr/server/solr/budgetportal-staging/conf
 RUN mkdir -p /opt/solr/server/solr/budgetportal-staging/data
 
 # Adding Files
-ADD ./cores/budgetportal-staging/conf /opt/solr/server/solr/budgetportal-staging/conf/
+ADD ./cores/budgetportal/conf /opt/solr/server/solr/budgetportal-staging/conf/
 RUN cp -r /opt/solr/example/files/conf/lang /opt/solr/server/solr/budgetportal-staging/conf/ && \
     cp -r /opt/solr/example/files/conf/stopwords.txt /opt/solr/server/solr/budgetportal-staging/conf/ && \
     cp -r /opt/solr/example/files/conf/synonyms.txt /opt/solr/server/solr/budgetportal-staging/conf/ && \
@@ -103,7 +103,7 @@ RUN mkdir -p /opt/solr/server/solr/budgetportal-test/conf
 RUN mkdir -p /opt/solr/server/solr/budgetportal-test/data
 
 # Adding Files
-ADD ./cores/budgetportal-test/conf /opt/solr/server/solr/budgetportal-test/conf/
+ADD ./cores/budgetportal/conf /opt/solr/server/solr/budgetportal-test/conf/
 RUN cp -r /opt/solr/example/files/conf/lang /opt/solr/server/solr/budgetportal-test/conf/ && \
     cp -r /opt/solr/example/files/conf/stopwords.txt /opt/solr/server/solr/budgetportal-test/conf/ && \
     cp -r /opt/solr/example/files/conf/synonyms.txt /opt/solr/server/solr/budgetportal-test/conf/ && \
