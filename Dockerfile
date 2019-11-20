@@ -94,3 +94,26 @@ RUN echo name=budgetportal-staging > /opt/solr/server/solr/budgetportal-staging/
 USER root
 RUN chown -R $SOLR_USER:$SOLR_USER /opt/solr/server/solr/budgetportal-staging
 USER $SOLR_USER:$SOLR_USER
+
+###########################################
+## Budget Portal Test core
+
+# Create Directories
+RUN mkdir -p /opt/solr/server/solr/budgetportal-test/conf
+RUN mkdir -p /opt/solr/server/solr/budgetportal-test/data
+
+# Adding Files
+ADD ./cores/budgetportal-test/conf /opt/solr/server/solr/budgetportal-test/conf/
+RUN cp -r /opt/solr/example/files/conf/lang /opt/solr/server/solr/budgetportal-test/conf/ && \
+    cp -r /opt/solr/example/files/conf/stopwords.txt /opt/solr/server/solr/budgetportal-test/conf/ && \
+    cp -r /opt/solr/example/files/conf/synonyms.txt /opt/solr/server/solr/budgetportal-test/conf/ && \
+    cp -r /opt/solr/example/files/conf/protwords.txt /opt/solr/server/solr/budgetportal-test/conf/ && \
+    cp -r /opt/solr/example/files/conf/currency.xml /opt/solr/server/solr/budgetportal-test/conf/ && \
+    cp -r /opt/solr/example/files/conf/elevate.xml /opt/solr/server/solr/budgetportal-test/conf/
+
+# Create Core.properties
+RUN echo name=budgetportal-test > /opt/solr/server/solr/budgetportal-test/core.properties
+
+USER root
+RUN chown -R $SOLR_USER:$SOLR_USER /opt/solr/server/solr/budgetportal-test
+USER $SOLR_USER:$SOLR_USER
