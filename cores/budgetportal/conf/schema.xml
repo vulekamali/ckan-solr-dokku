@@ -89,6 +89,10 @@
     
     <field name="province_exact" type="string" indexed="true" stored="true" multiValued="false" />
     
+    <field name="government_label" type="text_en" indexed="true" stored="true" multiValued="false" />
+    
+    <field name="government_label_exact" type="string" indexed="true" stored="true" multiValued="false" />
+    
     <field name="sphere" type="text_en" indexed="true" stored="true" multiValued="false" />
     
     <field name="sphere_exact" type="string" indexed="true" stored="true" multiValued="false" />
