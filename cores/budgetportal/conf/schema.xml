@@ -89,9 +89,21 @@
     
     <field name="province_exact" type="string" indexed="true" stored="true" multiValued="false" />
     
+    <field name="government_label" type="text_en" indexed="true" stored="true" multiValued="false" />
+    
+    <field name="government_label_exact" type="string" indexed="true" stored="true" multiValued="false" />
+    
+    <field name="sphere" type="text_en" indexed="true" stored="true" multiValued="false" />
+    
+    <field name="sphere_exact" type="string" indexed="true" stored="true" multiValued="false" />
+    
     <field name="department" type="text_en" indexed="true" stored="true" multiValued="false" />
     
     <field name="department_exact" type="string" indexed="true" stored="true" multiValued="false" />
+    
+    <field name="sector" type="text_en" indexed="true" stored="true" multiValued="false" />
+    
+    <field name="sector_exact" type="string" indexed="true" stored="true" multiValued="false" />
     
     <field name="status" type="text_en" indexed="true" stored="true" multiValued="false" />
     
@@ -154,8 +166,6 @@
     <field name="expenditure_from_previous_years_construction_costs" type="float" indexed="false" stored="true" multiValued="false" />
     
     <field name="expenditure_from_previous_years_total" type="float" indexed="false" stored="true" multiValued="false" />
-    
-    <field name="project_expenditure_total" type="float" indexed="false" stored="true" multiValued="false" />
     
     <field name="main_appropriation_professional_fees" type="float" indexed="false" stored="true" multiValued="false" />
     
