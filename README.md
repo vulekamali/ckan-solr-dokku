@@ -24,7 +24,7 @@ dokku apps:create ckan-solr
 Add the dokku app remote to your loca git clone
 
 ```
-git remote add dokku dokku@dokku7.code4sa.org:ckan-solr
+git remote add dokku dokku@treasury5.openup.org:ckan-solr
 ```
 
 ### Configure it to use the volume
